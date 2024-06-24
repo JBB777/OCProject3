@@ -66,11 +66,7 @@ header {
     margin-bottom: 1rem;
 }
 
-.search-and-filter h1 {
-    margin-bottom: 0.5rem;
-}
-
-.search-and-filter p {
+.search-and-filter-title p {
     margin-top: 0.5rem;
 }
 
@@ -146,10 +142,16 @@ header {
 .filtre div {
     display: flex;
     gap:5px;
+    align-items: center;
 }
+
 
 .filtre a {
     display: flex;
+}
+
+.filtre-title {
+    font-weight: bold;
 }
 
 .filtre-content {
@@ -256,26 +258,22 @@ a {
     width: 65%;
 }
 
-.cards-container {
+.hebergements-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 10px;
+    margin-top: 30px;
     column-gap: 10px;
-}
-
-@media (min-width:1025px) and (max-width: 1144px) {
-    .cards-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    row-gap: 40px;
 }
 
 .hebergements-cards .card {
     display: flex;
-    margin-top: 33px;
     flex-direction: column;
+    height: 95%;
 }
 
 .hebergements-cards img {
+    width: 100%;
     height: 100px;
     border-radius: 20px 20px 0 0;
 }
@@ -369,19 +367,12 @@ a {
 
 .activites-cards a {
     width: 24%;
-    height: 439px;
-}
-
-/* Pour garder les cartes de la même taille en réduisant la résolution de l'écran */
-@media (min-width:1025px) and (max-width:1135px) {
-    .activites-cards .card {
-        height: 440px;
-    }
 }
 
 .activites-cards .card {
     display: flex;
     flex-direction: column;
+    height: 100%;
     padding: 0; /* Pour enlever l'espace entre la photo et la bordure */
 }
 
@@ -399,17 +390,8 @@ a {
 /******************/
 
 footer {
-    display: flex;
     background-color: var(--main-bg-color);
-    column-gap: 5rem;
-    margin-bottom: -100px; /* Pour cacher le blanc en bas*/
-}
-
-footer div {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
-    padding: 0.5rem 0 2rem 0.5rem;
+    padding-bottom: 10px;
 }
 
 footer h3 {
@@ -417,6 +399,18 @@ footer h3 {
     margin:  0;
 }
 
+footer nav {
+    display: flex;
+    column-gap: 4rem;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding-top: 5px;
+}
 
 
 /****************************************************************************/
@@ -484,16 +478,9 @@ footer h3 {
     /***   ACTIVITES   ***/
     /*********************/
 
-    /* Pour garder les cartes de la même taille en réduisant la résolution de l'écran */
-    @media (min-width:768px) and (max-width:963px) {
-        .activites-cards .card {
-            height: 250px;
-        }
-    }
 
     .activites-cards a {
         width: 24%;
-        height: 270px;
     }
 
     .activites-cards img {
@@ -507,12 +494,8 @@ footer h3 {
     /******************/
     /***   FOOTER   ***/
     /******************/
-    footer {
-        column-gap: 3rem;
-    }
-
-    footer div {
-        row-gap: 0.3rem;
+    footer nav {
+        column-gap: 1rem;
     }
 
 }
@@ -520,7 +503,7 @@ footer h3 {
 /***************************************************/
 /***   Small devices (phones, less than 768px)   ***/
 /***************************************************/
-@media (min-width: 320px) and (max-width: 767.98px) {
+@media (max-width: 767.98px) {
 
 
     .main-container {
@@ -617,12 +600,8 @@ footer h3 {
     }
 
 
-    .cards-container {
+    .hebergements-cards {
         grid-template-columns: repeat(1, 1fr);
-    }
-
-    .hebergements-cards .card{
-        margin-top: 1rem;
     }
 
     .hebergements-cards a {
@@ -675,8 +654,10 @@ footer h3 {
     /******************/
 
     footer {
-        flex-direction: column;
         margin: 0 -10px -10px -10px; /* Pas de blanc sur les côtés. */
-        padding-left: 20px;
+    }
+
+    footer nav {
+        flex-direction: column;
     }
 }
